@@ -2,8 +2,8 @@
 
 /**
  * print_last_digit - print last digit
- * @k: takes number input
- * Return: last digit
+ * @i: takes number input
+ * Return: k
  */
 int print_last_digit(int i)
 {
