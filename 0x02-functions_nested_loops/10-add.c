@@ -4,7 +4,7 @@
  * add - add two values
  * @a: first input
  * @b: second input
- * Return: a+c
+ * Return: a+b
  */
 int add(int a, int b)
 {
