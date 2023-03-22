@@ -2,35 +2,26 @@
 
 /**
  * times_table - print the 9 times table
+ * Return: output
  */
 void times_table(void)
 {
-	int x, y, z, u, d;
+	int x, y, d;
 
 	for (x = 0; x <= 9; x++)
 	{
+		_putchar(48);
 		for (y = 1; y <= 9; y++)
 		{
-			z = x * y;
-			if (z > 9)
-			{
-				u = z % 10;
-				d = (z - u) / 10;
-				_putchar(44);
-				_putchar(32);
-				_putchar(d + '0');
-				_putchar(u + '0');
-			}
-			else 
-			{
-				if (y != 0)
-				{
-					_putchar(44);
-					_putchar(32);
-					_putchar(32);
-				}
-				_putchar(z + '0');
-			}
+			_putchar(',');
+			_putchar(' ');
+			d = x * y;
+
+			if (d <= 9)
+				_putchar(' ');
+			else
+				_putchar((d / 10) + 48);
+			_putchar((d % 10) + 48);
 		}
 		_putchar('\n');
 	}
