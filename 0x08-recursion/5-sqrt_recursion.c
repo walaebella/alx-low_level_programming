@@ -3,7 +3,8 @@
 /**
  * number - finds the square root
  * @n: natuarl number
- * @q: squareroot
+ * @q: square root
+ * Return: square root not natural -1
  */
 int number(int n, int q)
 {
