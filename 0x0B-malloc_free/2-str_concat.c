@@ -7,30 +7,31 @@
  * @s2: second string
  * Return: s
  */
+
 char *str_concat(char *s1, char *s2)
 {
-	int a, b, c = 0;
+	int i = 0, j = 0, k = 0;
 	char *s;
 
 	if (s1 != NULL)
-		for (a = 0; s1[a]; a++)
+		for (; s1[i]; i++)
 			;
 	if (s2 != NULL)
-		for (b = 0; s2[b]; b++)
+		for (; s2[j]; j++)
 			;
-	s = malloc(sizeof(char) * (a + b + 1));
+	s = malloc(sizeof(char) * (i + j + 1));
 	if (s == NULL)
 		return (NULL);
-	while (c < a)
+	while (k < i)
 	{
-		s[c] = s1[c];
-		c++;
+		s[k] = s1[k];
+		k++;
 	}
-	while (c < a + b)
+	while (k < i + j)
 	{
-		s[c] = s2[c - a];
-		c++;
+		s[k] = s2[k - i];
+		k++;
 	}
-	s[c] = '\0';
+	s[k] = '\0';
 	return (s);
 }
