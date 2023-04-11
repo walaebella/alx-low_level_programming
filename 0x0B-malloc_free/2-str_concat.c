@@ -5,38 +5,31 @@
  * str_concat - concatenates two strings
  * @s1: first string
  * @s2: second string
- * Return: s1 and s2
+ * Return: s
  */
 char *str_concat(char *s1, char *s2)
 {
-	int a = 0, b = 0, c = 0, d = 0;
+	int a, b, c = 0;
 	char *s;
 
-	if (s1 == NULL)
-		s1 = "";
-	if (s2 == NULL)
-		s2 = "";
-	while (s1[a])
-		a++;
-	while (s2[b])
-		b++;
-	c = a + b;
-	s = malloc((sizeof(char) * c) + 1);
-
+	if (s1 !=NULL)
+		for (a = 0; s1[a]; a++)
+			;
+	for (b = 0; s2[b]; b++)
+		;
+	s = malloc(sizeof(char) * (a + b + 1));
 	if (s == NULL)
 		return (NULL);
-	b = 0;
-	while (d < c)
+	while (c < a)
 	{
-		if (d <= a)
-			s1[d] = s[d];
-	if (d >= a)
+		s[c] = s1[c];
+		c++;
+	}
+	while (c < a + b)
 	{
-		s[d] = s2[b];
-		b++;
+		s[c] = s2[c - a];
+		c++;
 	}
-	d++;
-	}
-	s[d] = '\0';
+	s[c] = '\0';
 	return (s);
 }
