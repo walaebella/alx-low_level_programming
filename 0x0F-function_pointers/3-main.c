@@ -12,25 +12,27 @@
  */
 int main(int argc, char *argv[])
 {
-	int (*operation)(int, int);
+	int a, b;
+	char *op;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	if (argv[2][1])
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	operation = get_op_func(argv[2]);
-	if (!operation)
+	a = atoi(argv[1]);
+	op = argv[2];
+	b = atoi(argv[3]);
+	if (get_op_func(op) == NULL || op[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
-
-	printf("%d\n", operation(atoi(argv[1]), atoi(argv[3])));
+	if ((*op == '/' && b == 0) || (*op == '%' && b == 0))
+	{
+		printf("Error\n");
+		exit(100);
+	}
+	printf("%d\n", get_op_func(op)(a, b));
 	return (0);
 }
